@@ -1,63 +1,70 @@
-# gatsby-starter-typescript-auth0-hasura
-##### A Gatsby starter in TypeScript for authenticating via Auth0 and using the JWT with Hasura over GraphQL
+# Getting Started with Create React App
 
-Although there are plenty of Gatsby+Hasura and Gatsby+Auth0 tutorials out there, at the time of writing all were out of date and using old patterns with deprecated libraries.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This starter provides a simple Gatsby Admin page that:
+## Available Scripts
 
-1. Authenticates via [Auth0 OAuth 2.0](https://auth0.com/docs/api/authentication) to obtain a [JSON Web Token](https://auth0.com/docs/secure/tokens/json-web-tokens) (JWT); and
-1. Uses the JWT in the request header to make simple GraphQL query and mutation requests to [Hasura](https://hasura.io/).
+In the project directory, you can run:
 
-The Admin page is styled with Bootstrap and is based on a slightly modified [Dashboard Component](https://getbootstrap.com/docs/5.2/examples/). "Organizations" are used as an example for listing and creating objects/records, all other nav links serve as display placeholders only.
+### `npm start`
 
-![Screenshot](static/screenshot.png)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-This starter uses:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- [TypeScript](https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/)
-- [auth0-react](https://github.com/auth0/auth0-react) for Auth0 OAuth 2.0 authentication with JWTs
-- [urgql](https://github.com/FormidableLabs/urql) for the GraphQL client
-- [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap) and [react-feather](https://github.com/feathericons/react-feather) for styling
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
-### Hasura Configuration
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-1. Follow [instructions](https://hasura.io/docs/latest/graphql/core/getting-started/index/) to set up Hasura
-1. Create a simple table to store Organizations
-```sql
-  CREATE TABLE organizations(
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    label TEXT
-  );
-```
-2. Track the table from the Hasura console *Data* tab
-2. Add a few test records from the Hasura console *Data* > *Insert Row* tab
-2. Allow your role (configured below) to `insert` and `select` from the Hasura console *Data* > *Permissions* tab
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-### Auth0 Configuration
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Follow [these steps](https://hasura.io/docs/latest/graphql/core/guides/integrations/auth0-jwt/) to set up Auth0 with custom claims for Hasura.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### ENV configuration
+## Learn More
 
-Rename `.env.example` to `.env.development` and update accordingly
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-| Property                  | Example Value                                   |
-| ------------------------- | ----------------------------------------------- |
-| GATSBY_HASURA_GRAPHQL_URL | `http://localhost:8080/v1/graphql`         |
-| GATSBY_AUTH0_DOMAIN       | `<my-tenant-name>.us.auth0.com`                 |
-| GATSBY_AUTH0_CLIENT_ID    | `T4WN7SBfeJ0BO6CFX2nw3k2yEECHOVMe`              |
-| GATSBY_AUTH0_REDIRECT_URI | `http://localhost:8000`                         |
-| GATSBY_AUTH0_AUDIENCE     | `https://<my-tenant-name>.us.auth0.com/api/v2/` |
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Contribute
+### Analyzing the Bundle Size
 
-Please help us keep this starter up to date and adhering to best practices and conventions. We are not veterans in the space and appreciate any contributions or suggestions on how things can be done better. Feel free to submit an issue, pull request or reach out: *hello* at *whitebrick* dot *com*
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
